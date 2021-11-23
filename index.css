@@ -1,0 +1,223 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#brd {
+    height: 90%;
+    top: 5%;
+    /* width: 50%; */
+    /* left: 25%; */
+    position: relative;
+    background-color: #fff;
+    border-radius: 30px;
+    border-width: 4px;
+    border-color: black;
+    border-style: solid;
+}
+
+#head,
+#bottom {
+    width: calc(100% + 8px);
+    position: absolute;
+    left: -4px;
+    height: 60px;
+    background-color: #000;
+    border-radius: 30px;
+}
+
+#head {
+    top: -4px;
+}
+
+#bottom {
+    bottom: -4px;
+}
+
+#head2,
+#bottom2 {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    background-color: #000;
+}
+
+#head2 {
+    top: 30px;
+}
+
+#bottom2 {
+    bottom: 30px;
+}
+
+#content {
+    top: 60px;
+    position: relative;
+    height: calc(100% - 120px);
+    background-color: #eee;
+    overflow: hidden;
+}
+
+.text.center {
+    text-align: center;
+}
+
+#title {
+    /* top: 50px; */
+    position: relative;
+    font-size: 54px;
+    line-height: 2;
+}
+
+#subtitle {
+    /* top: 50px; */
+    position: relative;
+    font-size: 36px;
+    line-height: 2;
+}
+
+.text.border {
+    -webkit-text-stroke: 1px #888;
+}
+
+.text.light.border {
+    -webkit-text-stroke: 0.5px #888;
+}
+
+.text.white {
+    color: #fff;
+}
+
+.page .button {
+    line-height: 3;
+    width: 80%;
+    left: 10%;
+    position: relative;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin: 50px 0;
+}
+
+.text.shadow {
+    text-shadow: #000 0.5px 0.5px 1px;
+}
+
+.page {
+    padding: 50px;
+    display: none;
+    height: calc(100% - 100px);
+}
+
+.page.active {
+    display: block;
+}
+
+.button.navy {
+    color: #fff;
+    background-color: navy;
+}
+
+.button.navy:hover {
+    background-color: rgb(90, 90, 210);
+}
+
+.link>a {
+    font-size: 24px;
+    text-decoration: underline;
+    line-height: 2;
+    cursor: pointer;
+}
+
+.button.empty {
+    color: navy;
+    border: navy 1px solid;
+}
+
+.button.empty:hover {
+    background-color: rgb(90, 90, 210);
+    color: white;
+}
+
+.input {
+    font-size: 24px;
+    margin: 50px 0;
+    line-height: 2;
+}
+
+.input>.entry {
+    display: inline;
+}
+
+.input>input.textbox {
+    display: inline;
+    font-size: 24px;
+    width: 60%;
+}
+
+.input.center {
+    text-align: center;
+}
+
+.input.center>input.textbox {
+    width: 90%;
+}
+
+#page1>#button1 {
+    color: navy;
+    background-color: #fff;
+    border: #888 1px solid;
+}
+
+#page1>#button2 {
+    background-color: rgba(0, 0, 0, 0);
+    border: #fff 1px solid;
+}
+
+#page1>#button1:hover {
+    background-color: navy;
+    color: #fff;
+}
+
+#page1>#button2:hover {
+    background-color: navy;
+}
+
+.page.overflow {
+    overflow: auto;
+}
+
+.back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    content: "返回";
+    background-color: navy;
+    color: #fff;
+    cursor: pointer;
+    line-height: 3;
+}
+
+.back:hover {
+    background-color: rgb(90, 90, 210);
+}
+
+.info {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.info.active {
+    height: 80px;
+    padding: 30px;
+    transition: all 0.5s;
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="brd">
+        <div id="head"></div>
+        <div id="head2"></div>
+        <div id="content">
+            <div class="page" id="page0" style="background-color: #333;" onclick="ChangePage('page1')"></div>
+            <div class="page" id="page1">
+                <div class="blank" style="height: 50px;"></div>
+                <div class="text border white light shadow" style="font-size: 24px;">欢迎进入</div>
+                <div id="title" class="text border white shadow">疫苗通</div>
+                <div class="text white" style="background-color: navy;text-indent: 10px;letter-spacing: 10px;line-height: 2;width: 70%;">您的疫苗接种管家</div>
+                <div class="blank" style="width: 100%;height: 150px;"></div>
+                <div id="button1" class="text button center" style="" onclick="ChangePage('page2')">进入首页</div>
+                <div id="button2" class="text button center white shadow border light" onclick="ChangePage('page0')">退出小程序</div>
+            </div>
+            <div class="page" id="page2">
+                <div class="back text center" onclick="ChangePage('page1')">返回</div>
+                <!-- <div class="blank" style="height: 25px;"></div> -->
+                <div class="button text center navy" onclick="ChangePage('page3')">常见问答</div>
+                <div class="blank" style="height: 15px;"></div>
+                <div class="button text center navy" onclick="ChangePage('page4')">开始预约</div>
+                <div class="blank" style="height: 15px;"></div>
+                <div class="button text center navy" onclick="ChangePage('page8')">查看预约结果</div>
+                <div class="blank" style="height: 15px;"></div>
+                <div class="button text center navy" onclick="ChangePage('page9')">今日排队情况</div>
+            </div>
+            <div class="page" id="page3">
+                <div class="back text center" onclick="ChangePage('page2')">返回</div>
+                <div id="subtitle" class="text center">疫苗接种常见问答</div>
+                <div class="button text center navy">安全性相关</div>
+                <div class="button text center navy">有效性相关</div>
+                <div class="button text center navy">副作用相关</div>
+                <div class="button text center navy">适宜接种人群</div>
+                <div class="button text center empty" style="margin-top: 80px;" onclick="ChangePage('page4')">开始预约</div>
+            </div>
+            <div class="page active" id="page4">
+                <div class="back text center" onclick="ChangePage('page2')">返回</div>
+                <div id="info" class="info text" style="position: absolute;z-index: 1;background-color: #fff;top: 0;left: 0;">
+                    <div class="text" style="font-size: 22px;line-height: 2;">
+                        新信息
+                    </div>
+                    <div class="text">
+                        您正在使用疫苗通进行身份验证，验证码为<a href="">211123</a>，10分钟有效，请不要告诉其他人哦！
+                    </div>
+                </div>
+                <div id="subtitle" class="text center">身份验证</div>
+                <div class="blank" style="height: 50px;"></div>
+                <div class="input">
+                    <div class="text entry">手机号</div>
+                    <input id="phoneNum" type="text" class="textbox">
+                </div>
+                <div class="input">
+                    <div class="text entry">验证码</div>
+                    <input id="codeNum" type="text" class="textbox">
+                </div>
+                <div id="errInfo" class="text" style="color: red;display: none;">验证码错误</div>
+                <div class="blank" style="height: 50px;"></div>
+                <div class="button text center navy" onclick="Code()">获取验证码</div>
+                <div class="button text center empty" onclick="ChangePage('page5')">下一步</div>
+            </div>
+            <div class="page" id="page5">
+                <div class="back text center" onclick="ChangePage('page4')">返回</div>
+                <div id="subtitle" class="text center">个人信息</div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">证件类型</div>
+                    <input id="idType" type="text" class="textbox" value="居民身份证">
+                </div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">证件号码</div>
+                    <input id="idNum" type="text" class="textbox">
+                </div>
+                <div class="blank" style="height: 10px;"></div>
+                <div class="input center" style="font-size: 18px;">
+                    <input type="checkbox" name="" id="" class="checkbox">已阅读自动匹配个人信息<a href="#">相关说明</a>
+                </div>
+                <div class="button text center empty" onclick="ChangePage('page6')">下一步</div>
+            </div>
+            <div class="page overflow" id="page6">
+                <div class="back text center" onclick="ChangePage('page5')">返回</div>
+                <div id="subtitle" class="text center">核对个人信息</div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">证件类型</div>
+                    <input id="idType2" type="text" class="textbox" value="居民身份证">
+                </div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">证件号码</div>
+                    <input id="idNum2" type="text" class="textbox" value="******************">
+                </div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">姓名</div>
+                    <input type="text" class="textbox" value="小徐">
+                </div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">性别</div>
+                    <input type="text" class="textbox" value="男">
+                </div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">年龄</div>
+                    <input type="text" class="textbox" value="22">
+                </div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">民族/国籍</div>
+                    <input type="text" class="textbox" value="汉族">
+                </div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">联系方式</div>
+                    <input id="phoneNum3" type="text" class="textbox" value="138 8888 8888">
+                </div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">现居住地</div>
+                    <input type="text" class="textbox" value="复旦大学南区宿舍">
+                </div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">过敏情况</div>
+                    <input type="text" class="textbox" value="无">
+                </div>
+                <div class="input">
+                    <div class="text entry" style="margin: auto;">接种情况</div>
+                    <input type="text" class="textbox" value="尚未接种">
+                </div>
+                <div class="input center" style="font-size: 18px;">
+                    <input type="checkbox" name="" id="" class="checkbox">确认上述个人信息无误
+                </div>
+                <div class="button text center empty" onclick="ChangePage('page7')">开始预约</div>
+            </div>
+            <div class="page overflow" id="page7">
+                <div class="back text center" onclick="ChangePage('page6')">返回</div>
+                <div id="subtitle" class="text center">预约信息</div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">预约接种点</div>
+                    <input id="place" type="text" class="textbox" value="长海医院">
+                </div>
+                <div class="button text center navy">查看地点与推荐交通路线</div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">预约日期</div>
+                    <input id="date" type="text" class="textbox">
+                </div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">预约场次</div>
+                    <input id="time" type="text" class="textbox">
+                </div>
+                <div class="button text center navy">自动匹配日历安排</div>
+
+                <div class="blank" style="height: 10px;"></div>
+                <div class="input center" style="font-size: 18px;">
+                    <input type="checkbox" name="" id="" class="checkbox">已阅读并接受疫苗接种<a href="#">知情同意书</a>
+                </div>
+                <div class="button text center empty" onclick="ChangePage('page8')">完成预约</div>
+            </div>
+            <div class="page overflow" id="page8">
+                <div id="subtitle" class="text center">预约成功</div>
+                <div class="text center" style="font-size: 18px;">请核对下方信息</div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">联系方式</div>
+                    <input id="phoneNum2" type="text" class="textbox" value="138 8888 8888" disabled>
+                </div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">接种点</div>
+                    <input id="place2" type="text" class="textbox" value="长海医院" disabled>
+                </div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">预约日期</div>
+                    <input id="date2" type="text" class="textbox" disabled>
+                </div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">预约场次</div>
+                    <input id="time2" type="text" class="textbox" disabled>
+                </div>
+                <div class="blank" style="height: 10px;"></div>
+                <div class="button text center empty" onclick="ChangePage('page2')">确认</div>
+            </div>
+            <div class="page active" id="page9">
+                <div id="subtitle" class="text center">今日接种排队</div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">接种点</div>
+                    <input id="place3" type="text" class="textbox" value="长海医院" disabled>
+                </div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">当前排队</div>
+                    <input type="text" class="textbox" value="68人" disabled>
+                </div>
+                <div class="input center">
+                    <div class="text entry center" style="margin: auto;">预计排队时间</div>
+                    <input type="text" class="textbox" value="8分钟" disabled>
+                </div>
+                <div class="button text center empty" onclick="ChangePage('page2')">确认</div>
+            </div>
+        </div>
+        <div id="bottom2"></div>
+        <div id="bottom"></div>
+    </div>
+</body>
+
+<script src="index.js"></script>
+
+</html>
